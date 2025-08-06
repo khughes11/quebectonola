@@ -3,3 +3,5 @@ collections:
   posts:
     output: true
     permalink: /posts/:slug/
+url: "https://khughes11.github.io"
+baseurl: "" # if using a project page repo
