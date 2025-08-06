@@ -4,4 +4,4 @@ collections:
     output: true
     permalink: /posts/:slug/
 url: "https://khughes11.github.io"
-baseurl: "" # if using a project page repo
+baseurl: "/quebectonola" # if using a project page repo
