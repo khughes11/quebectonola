@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<h1>Welcome to the Blog</h1>
+<ul>
+  {% for post in site.pages %}
+    {% if post.slug %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>

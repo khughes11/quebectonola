@@ -1,0 +1,5 @@
+title: Multi-Tab Blog
+collections:
+  posts:
+    output: true
+    permalink: /posts/:slug/
