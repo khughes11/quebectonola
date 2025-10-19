@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1 { fill: #2c5530; }
+      .cls-2 { fill: #4a7c59; }
+      .cls-3 { fill: #6b8e23; }
+    </style>
+  </defs>
+  <!-- Tree trunk -->
+  <rect class="cls-1" x="45" y="60" width="10" height="25"/>
+  <!-- Tree canopy -->
+  <circle class="cls-2" cx="50" cy="45" r="20"/>
+  <!-- Trail path -->
+  <path class="cls-3" d="M20 80 Q50 60 80 80" stroke="#8b4513" stroke-width="3" fill="none"/>
+  <!-- Hiker silhouette -->
+  <circle class="cls-1" cx="35" cy="75" r="3"/>
+  <rect class="cls-1" x="33" y="78" width="4" height="8"/>
+  <rect class="cls-1" x="30" y="82" width="2" height="6"/>
+  <rect class="cls-1" x="38" y="82" width="2" height="6"/>
+</svg>
