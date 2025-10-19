@@ -23,9 +23,11 @@ jobs:
         bundle install
 
     - name: Build the site
-      run: bundle exec jekyll build --baseurl="/quebectonola" --url="https://khughes11.github.io"
+      run: bundle exec jekyll build
       env:
         JEKYLL_ENV: production
+        BASEURL: /quebectonola
+        URL: https://khughes11.github.io
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
