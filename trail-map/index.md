@@ -40,7 +40,7 @@ This interactive map shows the complete route of the Quebec to NOLA trail, inclu
     {% if event.sections %}
       <p>Located in: 
         {% for section in event.sections %}
-          <a href="/sections/{{ section }}/">{{ section | capitalize }}</a>
+          <a href="{{ site.baseurl }}/sections/{{ section }}/">{{ section | capitalize }}</a>
           {% unless forloop.last %}, {% endunless %}
         {% endfor %}
       </p>
