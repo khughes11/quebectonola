@@ -1,0 +1,38 @@
+---
+layout: section-base
+---
+
+<div class="section-references">
+  <div class="references-navigation">
+    <a href="/sections/{{ page.section }}/" class="back-button">← Back to {{ page.section | capitalize }}</a>
+    <div class="references-nav-buttons">
+      <a href="/sections/{{ page.section }}/" class="nav-button">Posts</a>
+      <a href="/sections/{{ page.section }}/photos/" class="nav-button">Photos</a>
+      <a href="/sections/{{ page.section }}/references/" class="nav-button active">References</a>
+    </div>
+  </div>
+
+  <div class="references-content">
+    {{ content }}
+  </div>
+
+  {% assign reference_posts = site.section_content | where: "section", page.section | where: "category", "references" %}
+  {% if reference_posts.size > 0 %}
+    <div class="references-list">
+      <h2>References & Sources</h2>
+      {% for ref_post in reference_posts %}
+        <div class="reference-item">
+          <h3><a href="{{ ref_post.url }}">{{ ref_post.title }}</a></h3>
+          <p class="reference-date">{{ ref_post.date | date: "%B %d, %Y" | default: "No date" }}</p>
+          <div class="reference-content">
+            {{ ref_post.content | markdownify }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="no-content">
+      <p>No references available yet for this section.</p>
+    </div>
+  {% endif %}
+</div>

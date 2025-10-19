@@ -1,0 +1,38 @@
+---
+layout: section-base
+---
+
+<div class="section-photos">
+  <div class="photos-navigation">
+    <a href="/sections/{{ page.section }}/" class="back-button">← Back to {{ page.section | capitalize }}</a>
+    <div class="photos-nav-buttons">
+      <a href="/sections/{{ page.section }}/" class="nav-button">Posts</a>
+      <a href="/sections/{{ page.section }}/photos/" class="nav-button active">Photos</a>
+      <a href="/sections/{{ page.section }}/references/" class="nav-button">References</a>
+    </div>
+  </div>
+
+  <div class="photos-content">
+    {{ content }}
+  </div>
+
+  {% assign photo_posts = site.section_content | where: "section", page.section | where: "category", "photos" %}
+  {% if photo_posts.size > 0 %}
+    <div class="photo-gallery">
+      <h2>Photo Gallery</h2>
+      {% for photo_post in photo_posts %}
+        <div class="photo-item">
+          <h3><a href="{{ photo_post.url }}">{{ photo_post.title }}</a></h3>
+          <p class="photo-date">{{ photo_post.date | date: "%B %d, %Y" | default: "No date" }}</p>
+          <div class="photo-content">
+            {{ photo_post.content | markdownify }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="no-content">
+      <p>No photos available yet for this section.</p>
+    </div>
+  {% endif %}
+</div>

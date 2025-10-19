@@ -1,0 +1,24 @@
+---
+layout: home
+---
+
+<div class="section-page">
+  <div class="section-content">
+    {{ content }}
+  </div>
+
+  <div class="section-navigation">
+    <h2>Related Content</h2>
+    <div class="related-links">
+      <a href="/">← Back to Home</a>
+      {% if page.section %}
+        <a href="/sections/{{ page.section }}/">View {{ page.section | capitalize }} Section</a>
+      {% endif %}
+      {% if page.categories %}
+        {% for category in page.categories %}
+          <a href="/sections/{{ category }}/">{{ category | capitalize }} Section</a>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+---
+layout: default
+---
+
+<div class="container">
+  <article class="prose prose-lg max-w-none">
+    <header class="mb-8">
+      <h1>{{ page.title }}</h1>
+      {% if page.subtitle %}
+        <p class="hero__subtitle">{{ page.subtitle }}</p>
+      {% endif %}
+      
+      <!-- Section Jump Navigation -->
+      {% if page.layout == 'page' and page.slug %}
+        <nav class="section-jump-nav">
+          <a href="#map" class="jump-nav-btn">Map</a>
+          <a href="#overview" class="jump-nav-btn">Overview</a>
+          <a href="#posts" class="jump-nav-btn">Posts</a>
+        </nav>
+      {% endif %}
+    </header>
+    
+    <!-- Map Section -->
+    {% if page.layout == 'page' and page.slug %}
+      <section id="map" class="section-map">
+        {% if page.map %}
+          <div class="map-embed">{{ page.map }}</div>
+        {% else %}
+          <div class="map-placeholder">
+            <p>Map of {{ page.title }} would be displayed here</p>
+          </div>
+        {% endif %}
+      </section>
+    {% endif %}
+    
+    <!-- Overview Section -->
+    <section id="overview" class="section-overview">
+      {{ content }}
+    </section>
+    
+    <!-- Posts Section -->
+    {% if page.layout == 'page' and page.slug %}
+      <section id="posts" class="section-posts">
+        <h2>Related Posts</h2>
+        
+        <!-- Modern Exploration Posts -->
+        {% assign modern_posts = site.modern | where_exp: "item", "item.sections contains page.slug" %}
+        {% if modern_posts.size > 0 %}
+          <h3>Modern Exploration</h3>
+          {% for post in modern_posts %}
+            <div class="post-summary post-summary--modern">
+              <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+              <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+              <p>{{ post.excerpt | default: post.description | truncate: 150 }}</p>
+            </div>
+          {% endfor %}
+        {% endif %}
+
+        <!-- Historical Posts -->
+        {% assign historical_posts = site.historical | where_exp: "item", "item.sections contains page.slug" %}
+        {% if historical_posts.size > 0 %}
+          <h3>Historical Documentation</h3>
+          {% for post in historical_posts %}
+            <div class="post-summary post-summary--historical">
+              <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+              <p class="post-date">{{ post.date | date: "%B %d, %Y" | default: "No date" }}</p>
+              <p>{{ post.excerpt | default: post.description | truncate: 150 }}</p>
+            </div>
+          {% endfor %}
+        {% endif %}
+
+        {% if modern_posts.size == 0 and historical_posts.size == 0 %}
+          <p class="no-content-message">No posts available yet for this section.</p>
+        {% endif %}
+      </section>
+    {% endif %}
+    
+    <!-- Sources & Citations -->
+    {% if page.sources or page.citations %}
+      <div class="data-sources">
+        <h3 class="data-sources__title">Sources & Citations</h3>
+        <ul class="data-sources__list">
+          {% if page.sources %}
+            {% for source in page.sources %}
+              <li class="data-sources__item">{{ source }}</li>
+            {% endfor %}
+          {% endif %}
+          {% if page.citations %}
+            {% for citation in page.citations %}
+              <li class="data-sources__item">{{ citation }}</li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+    {% endif %}
+  </article>
+</div>
