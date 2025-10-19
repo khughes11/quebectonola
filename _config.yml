@@ -36,4 +36,4 @@ defaults:
       layout: "post"
 
 url: "https://khughes11.github.io"
-baseurl: "" # empty for local development
+baseurl: "/quebectonola"
