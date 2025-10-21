@@ -22,7 +22,7 @@ This page contains a complete archive of all posts, articles, and content from a
         <span class="post-sections">
           Sections: 
           {% for section in post.sections %}
-            <a href="{{ site.baseurl }}/sections/{{ section }}/">{{ section | capitalize }}</a>
+            <a href="{{ '/sections/' | relative_url }}{{ section }}/">{{ section | capitalize }}</a>
             {% unless forloop.last %}, {% endunless %}
           {% endfor %}
         </span>

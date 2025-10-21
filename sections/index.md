@@ -27,7 +27,7 @@ Explore the Quebec to NOLA trail section by section. Each section contains histo
   {% assign section_overview = site.pages | where: "slug", section_name | first %}
   
   <div class="section-card">
-    <h2><a href="{{ site.baseurl }}/sections/{{ section_name }}/">{{ section_name | capitalize }}</a></h2>
+    <h2><a href="{{ '/sections/' | relative_url }}{{ section_name }}/">{{ section_name | capitalize }}</a></h2>
     {% if section_overview %}
       <p>{{ section_overview.description }}</p>
     {% endif %}

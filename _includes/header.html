@@ -1,39 +1,39 @@
 <!-- Header Navigation Component -->
 <header class="nav" role="banner">
   <div class="nav__container">
-    <a href="{{ site.baseurl }}/" class="nav__brand">
+    <a href="{{ '/' | relative_url }}" class="nav__brand">
       {{ site.title }}
     </a>
     
     <nav class="nav__menu" id="main-navigation" role="navigation" aria-label="Main navigation">
       <ul class="nav__menu">
         <li class="nav__item">
-          <a href="{{ site.baseurl }}/" class="nav__link{% if page.url == '/' %} nav__link--active{% endif %}">
+          <a href="{{ '/' | relative_url }}" class="nav__link{% if page.url == '/' %} nav__link--active{% endif %}">
             Home
           </a>
         </li>
         <li class="nav__item">
-          <a href="{{ site.baseurl }}/trail-map/" class="nav__link{% if page.url contains '/trail-map/' %} nav__link--active{% endif %}">
+          <a href="{{ '/trail-map/' | relative_url }}" class="nav__link{% if page.url contains '/trail-map/' %} nav__link--active{% endif %}">
             Trail Map
           </a>
         </li>
         <li class="nav__item">
-          <a href="{{ site.baseurl }}/sections/" class="nav__link{% if page.url contains '/sections/' %} nav__link--active{% endif %}">
+          <a href="{{ '/sections/' | relative_url }}" class="nav__link{% if page.url contains '/sections/' %} nav__link--active{% endif %}">
             Trail Sections
           </a>
         </li>
         <li class="nav__item">
-          <a href="{{ site.baseurl }}/all-posts/" class="nav__link{% if page.url contains '/all-posts/' %} nav__link--active{% endif %}">
+          <a href="{{ '/all-posts/' | relative_url }}" class="nav__link{% if page.url contains '/all-posts/' %} nav__link--active{% endif %}">
             All Posts
           </a>
         </li>
         <li class="nav__item">
-          <a href="{{ site.baseurl }}/how-to-contribute/" class="nav__link{% if page.url contains '/how-to-contribute/' %} nav__link--active{% endif %}">
+          <a href="{{ '/how-to-contribute/' | relative_url }}" class="nav__link{% if page.url contains '/how-to-contribute/' %} nav__link--active{% endif %}">
             How to Contribute
           </a>
         </li>
         <li class="nav__item">
-          <a href="{{ site.baseurl }}/about-us/" class="nav__link{% if page.url contains '/about-us/' %} nav__link--active{% endif %}">
+          <a href="{{ '/about-us/' | relative_url }}" class="nav__link{% if page.url contains '/about-us/' %} nav__link--active{% endif %}">
             About Us
           </a>
         </li>
