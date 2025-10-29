@@ -4,11 +4,12 @@ layout: section-base
 
 <div class="section-references">
   <div class="references-navigation">
-    <a href="/sections/{{ page.section }}/" class="back-button">← Back to {{ page.section | capitalize }}</a>
+    {% assign section_base = '/sections/' | append: page.section | append: '/' %}
+    <a href="{{ section_base | relative_url }}" class="back-button">← Back to {{ page.section | capitalize }}</a>
     <div class="references-nav-buttons">
-      <a href="/sections/{{ page.section }}/" class="nav-button">Posts</a>
-      <a href="/sections/{{ page.section }}/photos/" class="nav-button">Photos</a>
-      <a href="/sections/{{ page.section }}/references/" class="nav-button active">References</a>
+      <a href="{{ section_base | relative_url }}" class="nav-button">Posts</a>
+      <a href="{{ section_base | append: 'photos/' | relative_url }}" class="nav-button">Photos</a>
+      <a href="{{ section_base | append: 'references/' | relative_url }}" class="nav-button active">References</a>
     </div>
   </div>
 
@@ -22,7 +23,7 @@ layout: section-base
       <h2>References & Sources</h2>
       {% for ref_post in reference_posts %}
         <div class="reference-item">
-          <h3><a href="{{ ref_post.url }}">{{ ref_post.title }}</a></h3>
+          <h3><a href="{{ ref_post.url | relative_url }}">{{ ref_post.title }}</a></h3>
           <p class="reference-date">{{ ref_post.date | date: "%B %d, %Y" | default: "No date" }}</p>
           <div class="reference-content">
             {{ ref_post.content | markdownify }}

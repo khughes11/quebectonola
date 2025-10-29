@@ -40,7 +40,7 @@
       {% comment %} Posts breadcrumb {% endcomment %}
       {% elsif page.url contains '/posts/' %}
         <li class="breadcrumb__item">
-          <a href="{{ site.baseurl }}/all-posts/" class="breadcrumb__link">All Posts</a>
+          <a href="{{ '/all-posts/' | relative_url }}" class="breadcrumb__link">All Posts</a>
         </li>
         <li class="breadcrumb__item">
           <span class="breadcrumb__current">{{ page.title }}</span>
@@ -61,7 +61,7 @@
       {% comment %} Themes breadcrumb {% endcomment %}
       {% elsif page.url contains '/themes/' %}
         <li class="breadcrumb__item">
-          <a href="{{ site.baseurl }}/themes/" class="breadcrumb__link">Themes</a>
+          <a href="{{ '/themes/' | relative_url }}" class="breadcrumb__link">Themes</a>
         </li>
         {% if page.url != '/themes/' %}
           <li class="breadcrumb__item">

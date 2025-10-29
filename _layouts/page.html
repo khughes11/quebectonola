@@ -49,7 +49,7 @@ layout: default
           <h3>Modern Exploration</h3>
           {% for post in modern_posts %}
             <div class="post-summary post-summary--modern">
-              <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+              <h4><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
               <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
               <p>{{ post.excerpt | default: post.description | truncate: 150 }}</p>
             </div>
@@ -62,7 +62,7 @@ layout: default
           <h3>Historical Documentation</h3>
           {% for post in historical_posts %}
             <div class="post-summary post-summary--historical">
-              <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+              <h4><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
               <p class="post-date">{{ post.date | date: "%B %d, %Y" | default: "No date" }}</p>
               <p>{{ post.excerpt | default: post.description | truncate: 150 }}</p>
             </div>

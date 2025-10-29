@@ -10,13 +10,15 @@ layout: home
   <div class="section-navigation">
     <h2>Related Content</h2>
     <div class="related-links">
-      <a href="/">← Back to Home</a>
+      <a href="{{ '/' | relative_url }}">← Back to Home</a>
       {% if page.section %}
-        <a href="/sections/{{ page.section }}/">View {{ page.section | capitalize }} Section</a>
+        {% assign section_path = '/sections/' | append: page.section | append: '/' %}
+        <a href="{{ section_path | relative_url }}">View {{ page.section | capitalize }} Section</a>
       {% endif %}
       {% if page.categories %}
         {% for category in page.categories %}
-          <a href="/sections/{{ category }}/">{{ category | capitalize }} Section</a>
+          {% assign category_path = '/sections/' | append: category | append: '/' %}
+          <a href="{{ category_path | relative_url }}">{{ category | capitalize }} Section</a>
         {% endfor %}
       {% endif %}
     </div>

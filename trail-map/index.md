@@ -25,7 +25,7 @@ This interactive map shows the complete route of the Quebec to NOLA trail, inclu
     <p>Key features and points of interest in this section:</p>
     <ul>
       {% for content in section_group.items %}
-        <li><a href="{{ content.url }}">{{ content.title }}</a></li>
+        <li><a href="{{ content.url | relative_url }}">{{ content.title }}</a></li>
       {% endfor %}
     </ul>
   </div>

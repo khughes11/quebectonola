@@ -12,7 +12,7 @@
           <div class="timeline__sections">
             <strong>Affected Sections:</strong>
             {% for section in item.sections %}
-              <a href="{{ section.url }}">{{ section.name }}</a>{% unless forloop.last %}, {% endunless %}
+              <a href="{{ section.url | relative_url }}">{{ section.name }}</a>{% unless forloop.last %}, {% endunless %}
             {% endfor %}
           </div>
         {% endif %}

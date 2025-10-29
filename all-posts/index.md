@@ -36,7 +36,7 @@ This page contains a complete archive of all posts, articles, and content from a
       {% endif %}
     </div>
     <div class="post-content">
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <p>{{ post.excerpt | default: post.description | truncate: 200 }}</p>
     </div>
   </div>

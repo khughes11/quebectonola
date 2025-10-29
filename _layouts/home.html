@@ -144,7 +144,7 @@ layout: default
         {% if recent_modern.size > 0 %}
           {% for post in recent_modern %}
             <div class="activity-item">
-              <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+              <h4><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
               <div class="activity-meta">
                 <span class="tag">{{ post.date | date: "%B %d, %Y" }}</span>
                 {% for section in post.sections %}
@@ -176,7 +176,7 @@ layout: default
         {% if recent_historical.size > 0 %}
           {% for event in recent_historical %}
             <div class="activity-item">
-              <h4><a href="{{ event.url }}">{{ event.title }}</a></h4>
+              <h4><a href="{{ event.url | relative_url }}">{{ event.title }}</a></h4>
               <div class="activity-meta">
                 <span class="tag">{{ event.date | default: "Historical" }}</span>
                 {% for section in event.sections %}
@@ -208,7 +208,7 @@ layout: default
       {% if recent_photos.size > 0 %}
         {% for photo in recent_photos %}
           <div class="activity-item">
-            <h4><a href="{{ photo.url }}">{{ photo.title }}</a></h4>
+            <h4><a href="{{ photo.url | relative_url }}">{{ photo.title }}</a></h4>
             <div class="activity-meta">
               <span class="tag">{{ photo.date | date: "%B %d, %Y" | default: "Photo" }}</span>
               {% for section in photo.sections %}
@@ -242,7 +242,7 @@ layout: default
       {% if recent_references.size > 0 %}
         {% for reference in recent_references %}
           <div class="activity-item">
-            <h4><a href="{{ reference.url }}">{{ reference.title }}</a></h4>
+            <h4><a href="{{ reference.url | relative_url }}">{{ reference.title }}</a></h4>
             <div class="activity-meta">
               <span class="tag">{{ reference.date | date: "%B %d, %Y" | default: "Reference" }}</span>
               {% for section in reference.sections %}
