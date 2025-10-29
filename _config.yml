@@ -1,7 +1,7 @@
 title: Quebec to NOLA Trail
 description: Documentation of the ancient Quebec to NOLA trail, including historical research, modern exploration, and conservation efforts.
-url: "https://khughes11.github.io"
-baseurl: "/quebectonola"
+url: https://khughes11.github.io
+baseurl: /quebectonola
 
 # Jekyll configuration
 markdown: kramdown
