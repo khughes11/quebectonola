@@ -30,7 +30,7 @@ This section begins at the northern terminus and extends approximately [distance
 
 Section A contains some of the most important archaeological sites along the trail, including:
 
-- Pre-colonial Native American settlements
+- Pre-colonial Indigenous settlements
 - Colonial-era structures and artifacts
 - Military encampments from various conflicts
 - Transportation infrastructure remnants

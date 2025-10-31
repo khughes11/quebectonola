@@ -58,17 +58,6 @@
           <span class="breadcrumb__current">About Us</span>
         </li>
       
-      {% comment %} Themes breadcrumb {% endcomment %}
-      {% elsif page.url contains '/themes/' %}
-        <li class="breadcrumb__item">
-          <a href="{{ '/themes/' | relative_url }}" class="breadcrumb__link">Themes</a>
-        </li>
-        {% if page.url != '/themes/' %}
-          <li class="breadcrumb__item">
-            <span class="breadcrumb__current">{{ page.title }}</span>
-          </li>
-        {% endif %}
-      
       {% comment %} Default fallback {% endcomment %}
       {% else %}
         <li class="breadcrumb__item">

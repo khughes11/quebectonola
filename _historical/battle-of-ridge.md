@@ -5,7 +5,6 @@ sections: [section-a, section-b]
 description: "A significant conflict that shaped the development of the trail"
 references:
   - "Colonial Records, 1756"
-  - "Native American Oral Histories"
   - "Archaeological Survey Report, 1987"
 ---
 
@@ -15,7 +14,7 @@ The Battle of Ridge was a pivotal moment in the history of the Quebec to NOLA tr
 
 ## Historical Context
 
-In 1756, tensions between colonial settlers and Native American tribes...
+In 1756, tensions between colonial settlers and ...
 
 ## Impact on the Trail
 
