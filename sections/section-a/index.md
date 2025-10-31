@@ -43,40 +43,51 @@ This section is currently:
 - **Research Activity**: [Active/Periodic/Planned]
 - **Documentation Level**: [Complete/Partial/Initial Survey]
 
-## All Content for Section A
+<h2 id="posts">All Content for Section A</h2>
 
-{% assign historical = site.historical | where_exp: "item", "item.sections contains page.slug" %}
-{% assign modern = site.modern | where_exp: "item", "item.sections contains page.slug" %}
-{% assign photos = site.photos | where_exp: "item", "item.sections contains page.slug" %}
-{% assign references = site.references | where_exp: "item", "item.sections contains page.slug" %}
-
-{% assign all_posts = "" | split: "" %}
-{% assign all_posts = all_posts | concat: historical | concat: modern | concat: photos | concat: references | sort: "date" | reverse %}
-
-{% for post in all_posts %}
-  <div class="post-item {{ post.collection }}">
-    <div class="post-meta">
-      <span class="post-type">{{ post.collection | capitalize }}</span>
-      {% if post.date %}
-        <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
-      {% endif %}
-      {% if post.tags %}
-        <span class="post-tags">
-          {% for tag in post.tags %}
-            <span class="tag">{{ tag }}</span>
-          {% endfor %}
-        </span>
-      {% endif %}
-    </div>
-    <div class="post-content">
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-      <p>{{ post.excerpt | default: post.description | truncate: 200 }}</p>
-    </div>
+<div class="card">
+  <div class="card__header">
+    <h3 class="card__title">All Content</h3>
+    <p class="card__subtitle">Complete archive of research and updates</p>
   </div>
-{% endfor %}
+  <div class="card__content">
+    {% assign historical = site.historical | where_exp: "item", "item.sections contains page.slug" %}
+    {% assign modern = site.modern | where_exp: "item", "item.sections contains page.slug" %}
+    {% assign photos = site.photos | where_exp: "item", "item.sections contains page.slug" %}
+    {% assign references = site.references | where_exp: "item", "item.sections contains page.slug" %}
 
-{% if all_posts.size == 0 %}
-  <div class="no-content">
-    <p>No content has been documented for Section A yet. Check back soon as we continue to explore and document the trail!</p>
+    {% assign all_posts = "" | split: "" %}
+    {% assign all_posts = all_posts | concat: historical | concat: modern | concat: photos | concat: references | sort: "date" | reverse %}
+
+    {% if all_posts.size > 0 %}
+      {% for post in all_posts %}
+        <div class="activity-item">
+          <h4><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
+          <div class="activity-meta">
+            {% if post.date %}
+              <span class="tag">{{ post.date | date: "%B %d, %Y" }}</span>
+            {% endif %}
+            <span class="tag tag--tertiary">{{ post.collection | capitalize }}</span>
+            {% if post.sections %}
+              {% for section in post.sections %}
+                <span class="tag tag--primary">{{ section | capitalize }}</span>
+              {% endfor %}
+            {% endif %}
+            {% if post.tags %}
+              {% for tag in post.tags %}
+                <span class="tag tag--secondary">{{ tag | capitalize }}</span>
+              {% endfor %}
+            {% endif %}
+          </div>
+          {% if post.description %}
+            <p class="text-tertiary">{{ post.description }}</p>
+          {% elsif post.excerpt %}
+            <p class="text-tertiary">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="text-tertiary">No content has been documented for Section A yet. Check back soon as we continue to explore and document the trail!</p>
+    {% endif %}
   </div>
-{% endif %}
+</div>

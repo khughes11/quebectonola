@@ -136,7 +136,7 @@ layout: default
     <!-- Latest Modern Exploration Posts -->
     <div class="card">
       <div class="card__header">
-        <h3 class="card__title">Latest Modern Exploration</h3>
+        <h3 class="card__title">Modern Exploration</h3>
         <p class="card__subtitle">Recent research and field work</p>
       </div>
       <div class="card__content">
@@ -154,6 +154,11 @@ layout: default
                   <span class="tag tag--secondary">{{ tag | capitalize }}</span>
                 {% endfor %}
               </div>
+              {% if post.description %}
+                <p class="text-tertiary">{{ post.description }}</p>
+              {% elsif post.excerpt %}
+                <p class="text-tertiary">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+              {% endif %}
             </div>
           {% endfor %}
         {% else %}
@@ -168,7 +173,7 @@ layout: default
     <!-- Recent Historical Discoveries -->
     <div class="card">
       <div class="card__header">
-        <h3 class="card__title">Historical Discoveries</h3>
+        <h3 class="card__title">Historical Documentation</h3>
         <p class="card__subtitle">Recent historical research findings</p>
       </div>
       <div class="card__content">
@@ -178,7 +183,9 @@ layout: default
             <div class="activity-item">
               <h4><a href="{{ event.url | relative_url }}">{{ event.title }}</a></h4>
               <div class="activity-meta">
-                <span class="tag">{{ event.date | default: "Historical" }}</span>
+                {% if event.date %}
+                  <span class="tag">{{ event.date | date: "%B %d, %Y" }}</span>
+                {% endif %}
                 {% for section in event.sections %}
                   <span class="tag tag--primary">{{ section | capitalize }}</span>
                 {% endfor %}
@@ -186,6 +193,11 @@ layout: default
                   <span class="tag tag--secondary">{{ tag | capitalize }}</span>
                 {% endfor %}
               </div>
+              {% if event.description %}
+                <p class="text-tertiary">{{ event.description }}</p>
+              {% elsif event.excerpt %}
+                <p class="text-tertiary">{{ event.excerpt | strip_html | truncate: 200 }}</p>
+              {% endif %}
             </div>
           {% endfor %}
         {% else %}
@@ -210,7 +222,9 @@ layout: default
           <div class="activity-item">
             <h4><a href="{{ photo.url | relative_url }}">{{ photo.title }}</a></h4>
             <div class="activity-meta">
-              <span class="tag">{{ photo.date | date: "%B %d, %Y" | default: "Photo" }}</span>
+              {% if photo.date %}
+                <span class="tag">{{ photo.date | date: "%B %d, %Y" }}</span>
+              {% endif %}
               {% for section in photo.sections %}
                 <span class="tag tag--primary">{{ section | capitalize }}</span>
               {% endfor %}
@@ -218,6 +232,11 @@ layout: default
                 <span class="tag tag--secondary">{{ tag | capitalize }}</span>
               {% endfor %}
             </div>
+            {% if photo.description %}
+              <p class="text-tertiary">{{ photo.description }}</p>
+            {% elsif photo.excerpt %}
+              <p class="text-tertiary">{{ photo.excerpt | strip_html | truncate: 200 }}</p>
+            {% endif %}
           </div>
         {% endfor %}
       {% else %}
@@ -244,7 +263,9 @@ layout: default
           <div class="activity-item">
             <h4><a href="{{ reference.url | relative_url }}">{{ reference.title }}</a></h4>
             <div class="activity-meta">
-              <span class="tag">{{ reference.date | date: "%B %d, %Y" | default: "Reference" }}</span>
+              {% if reference.date %}
+                <span class="tag">{{ reference.date | date: "%B %d, %Y" }}</span>
+              {% endif %}
               {% for section in reference.sections %}
                 <span class="tag tag--primary">{{ section | capitalize }}</span>
               {% endfor %}
@@ -252,6 +273,11 @@ layout: default
                 <span class="tag tag--secondary">{{ tag | capitalize }}</span>
               {% endfor %}
             </div>
+            {% if reference.description %}
+              <p class="text-tertiary">{{ reference.description }}</p>
+            {% elsif reference.excerpt %}
+              <p class="text-tertiary">{{ reference.excerpt | strip_html | truncate: 200 }}</p>
+            {% endif %}
           </div>
         {% endfor %}
       {% else %}
