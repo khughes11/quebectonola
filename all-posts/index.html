@@ -200,22 +200,48 @@ document.addEventListener('DOMContentLoaded', function() {
     <section id="overview" class="section-overview">
       <p>This page contains a complete archive of all posts, articles, and content from across the Quebec to NOLA trail documentation site, organized by type and date.</p>
 
+<!-- Index Section Component
+  
+  Parameters:
+  - collection_type: "all", "modern", "historical", "photos", or "references" (required)
+  - limit: number of posts to show (optional, empty = unlimited)
+  - section_filter: page slug to filter posts by sections parameter (optional)
+  - title: card title (required)
+  - subtitle: card subtitle (optional)
+  - show_date: toggle date display (default: true)
+  - show_tags: toggle tags display (default: true)
+  - show_sections: toggle sections display (default: true)
+  - show_description: toggle description display (default: true)
+  - show_footer: toggle footer display (default: true)
+  - footer_text: footer link text (optional)
+  - footer_url: footer link URL (optional)
+  - sort_by: "date" (default)
+  - sort_order: "desc" (default) or "asc"
+-->
+
+<!-- Aggregate posts based on collection_type -->
+
+<!-- Apply section filter if provided -->
+
+<!-- Sort posts -->
+
+<!-- Apply limit if provided -->
+
 <div class="card">
   <div class="card__header">
     <h3 class="card__title">All Content</h3>
-    <p class="card__subtitle">Complete archive of research and updates</p>
+    
+      <p class="card__subtitle">Complete archive of research and updates</p>
+    
   </div>
   <div class="card__content">
-    
-    
-
     
       
         <div class="activity-item">
           <h4><a href="/quebectonola/modern/protection-efforts/">Section A Protection Efforts</a></h4>
           <div class="activity-meta">
             
-              <span class="tag">October 31, 2025</span>
+              <span class="tag">November 03, 2025</span>
             
             <span class="tag tag--tertiary">Modern</span>
             
@@ -228,8 +254,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
           </div>
           
-            <p class="text-tertiary">Conservation Efforts in Section A
+            
+              <p class="text-tertiary">Conservation Efforts in Section A
 </p>
+            
           
         </div>
       
@@ -237,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <h4><a href="/quebectonola/historical/battle-reference/">Battle of Ridge - Section A Perspective</a></h4>
           <div class="activity-meta">
             
-              <span class="tag">October 31, 2025</span>
+              <span class="tag">November 03, 2025</span>
             
             <span class="tag tag--tertiary">Historical</span>
             
@@ -250,8 +278,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
           </div>
           
-            <p class="text-tertiary">Battle of Ridge: Section A Impact
+            
+              <p class="text-tertiary">Battle of Ridge: Section A Impact
 </p>
+            
           
         </div>
       
@@ -259,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <h4><a href="/quebectonola/historical/battle-of-ridge/">Battle of Ridge</a></h4>
           <div class="activity-meta">
             
-              <span class="tag">October 31, 2025</span>
+              <span class="tag">November 03, 2025</span>
             
             <span class="tag tag--tertiary">Historical</span>
             
@@ -274,7 +304,9 @@ document.addEventListener('DOMContentLoaded', function() {
             
           </div>
           
-            <p class="text-tertiary">A significant conflict that shaped the development of the trail</p>
+            
+              <p class="text-tertiary">A significant conflict that shaped the development of the trail</p>
+            
           
         </div>
       
@@ -301,8 +333,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
           </div>
           
-            <p class="text-tertiary">Follow-up Survey
+            
+              <p class="text-tertiary">Follow-up Survey
 </p>
+            
           
         </div>
       
@@ -329,16 +363,20 @@ document.addEventListener('DOMContentLoaded', function() {
             
           </div>
           
-            <p class="text-tertiary">Discovery of Ancient Marker
+            
+              <p class="text-tertiary">Discovery of Ancient Marker
 </p>
+            
           
         </div>
       
     
   </div>
-  <div class="card__footer">
-    <a href="/quebectonola/all-posts/" class="btn btn--link">Back to top</a>
-  </div>
+  
+    <div class="card__footer">
+      <a href="/quebectonola/all-posts/" class="btn btn--link">Back to top</a>
+    </div>
+  
 </div>
 
 
