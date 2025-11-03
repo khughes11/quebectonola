@@ -26,41 +26,5 @@ Section B forms the central corridor of the Quebec to NOLA trail, linking the no
   show_footer=false
 %}
 
-<h2>Posts By Theme</h2>
-
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-  {% include index-section.html 
-    collection_type="modern"
-    section_filter=page.slug
-    title="Modern Exploration"
-    subtitle="Recent research and field work"
-    show_footer=false
-  %}
-
-  {% include index-section.html 
-    collection_type="historical"
-    section_filter=page.slug
-    title="Historical Documentation"
-    subtitle="Historical research findings"
-    show_footer=false
-  %}
-
-  {% include index-section.html 
-    collection_type="photos"
-    section_filter=page.slug
-    title="Photo Gallery"
-    subtitle="Visual documentation"
-    show_footer=false
-  %}
-
-  {% include index-section.html 
-    collection_type="references"
-    section_filter=page.slug
-    title="References"
-    subtitle="Research sources and documentation"
-    show_footer=false
-  %}
-</div>
-
 
 
