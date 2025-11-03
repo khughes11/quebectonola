@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Quebec to NOLA Trail</title>
+  <meta name="description" content="Documentation of the ancient Quebec to NOLA trail, including historical research, modern exploration, and conservation efforts.">
+  
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="/quebectonola/assets/css/design-system.css">
+  <link rel="stylesheet" href="/quebectonola/assets/css/components.css">
+  <link rel="stylesheet" href="/quebectonola/assets/css/pages.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/quebectonola/assets/images/favicon.svg">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="About Us | Quebec to NOLA Trail">
+  <meta property="og:description" content="Documentation of the ancient Quebec to NOLA trail, including historical research, modern exploration, and conservation efforts.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:4000/quebectonola/about-us/">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us | Quebec to NOLA Trail">
+  <meta name="twitter:description" content="Documentation of the ancient Quebec to NOLA trail, including historical research, modern exploration, and conservation efforts.">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Quebec to NOLA Trail",
+    "description": "Documentation of the ancient Quebec to NOLA trail, including historical research, modern exploration, and conservation efforts.",
+    "url": "http://localhost:4000/quebectonola/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "http://localhost:4000/quebectonola/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip to main content link for screen readers -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Header Navigation -->
+  <!-- Header Navigation Component -->
+<header class="nav" role="banner">
+  <div class="nav__container">
+    <a href="/quebectonola/" class="nav__brand">
+      Quebec to NOLA Trail
+    </a>
+    
+    <nav class="nav__menu" id="main-navigation" role="navigation" aria-label="Main navigation">
+      <ul class="nav__menu">
+        <li class="nav__item">
+          <a href="/quebectonola/" class="nav__link">
+            Home
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="/quebectonola/trail-map/" class="nav__link">
+            Trail Map
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="/quebectonola/sections/" class="nav__link">
+            Trail Sections
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="/quebectonola/all-posts/" class="nav__link">
+            All Posts
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="/quebectonola/how-to-contribute/" class="nav__link">
+            How to Contribute
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="/quebectonola/about-us/" class="nav__link nav__link--active">
+            About Us
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <div class="nav__actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+// Mobile navigation toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('main-navigation');
+  
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', function() {
+      const isOpen = navMenu.classList.contains('nav__menu--open');
+      
+      navMenu.classList.toggle('nav__menu--open');
+      navToggle.setAttribute('aria-expanded', !isOpen);
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+        navMenu.classList.remove('nav__menu--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        navMenu.classList.remove('nav__menu--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.focus();
+      }
+    });
+  }
+});
+</script>
+
+  
+  <!-- Breadcrumb Navigation -->
+  <!-- Breadcrumb Navigation Component -->
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="breadcrumb__container">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item">
+        <a href="/quebectonola/" class="breadcrumb__link">Home</a>
+      </li>
+      
+      
+      
+        <li class="breadcrumb__item">
+          <span class="breadcrumb__current">About Us</span>
+        </li>
+      
+      
+      
+    </ol>
+  </div>
+</nav>
+
+
+  
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    <div class="container">
+  <article class="prose prose-lg max-w-none">
+    <header class="mb-8">
+      <h1>About Us</h1>
+      
+      
+      <!-- Section Jump Navigation -->
+      
+    </header>
+    
+    <!-- Map Section -->
+    
+    
+    <!-- Overview Section -->
+    <section id="overview" class="section-overview">
+      <p>We are a community-driven blog. Everyone is welcome to contribute.</p>
+
+    </section>
+    
+    <!-- Posts Section -->
+    
+    
+    <!-- Sources & Citations -->
+    
+  </article>
+</div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3 class="footer__section-title">Explore</h3>
+          <ul class="footer__links">
+            <li><a href="/quebectonola/trail-map/" class="footer__link">Trail Map</a></li>
+            <li><a href="/quebectonola/sections/" class="footer__link">Trail Sections</a></li>
+            <li><a href="/quebectonola/all-posts/" class="footer__link">All Posts</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__section">
+          <h3 class="footer__section-title">Contribute</h3>
+          <ul class="footer__links">
+            <li><a href="/quebectonola/how-to-contribute/" class="footer__link">How to Contribute</a></li>
+            <li><a href="/quebectonola/about-us/" class="footer__link">About Us</a></li>
+            <li><a href="mailto:contact@quebectonola.com" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p>&copy; 2025 Quebec to NOLA Trail. All rights reserved.</p>
+        <p class="text-sm text-tertiary mt-2">
+          This site documents the ancient Quebec to NOLA trail with respect for Indigenous histories and ongoing research.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Theme Toggle Script -->
+  <script src="/quebectonola/assets/js/theme-toggle.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!-- Breadcrumb Navigation Component -->
+{% if page.url != '/' %}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="breadcrumb__container">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item">
+        <a href="{{ '/' | relative_url }}" class="breadcrumb__link">Home</a>
+      </li>
+      
+      {% comment %} Trail Map breadcrumb {% endcomment %}
+      {% if page.url contains '/trail-map/' %}
+        <li class="breadcrumb__item">
+          <span class="breadcrumb__current">Trail Map</span>
+        </li>
+      
+      {% comment %} Trail Sections breadcrumb {% endcomment %}
+      {% elsif page.url contains '/sections/' %}
+        <li class="breadcrumb__item">
+          <a href="{{ '/sections/' | relative_url }}" class="breadcrumb__link">Trail Sections</a>
+        </li>
+        {% if page.url != '/sections/' %}
+          {% assign section_name = page.url | split: '/' | slice: 2 %}
+          {% if section_name.size > 0 %}
+            <li class="breadcrumb__item">
+              <span class="breadcrumb__current">{{ section_name | capitalize }}</span>
+            </li>
+          {% endif %}
+        {% else %}
+          <li class="breadcrumb__item">
+            <span class="breadcrumb__current">All Sections</span>
+          </li>
+        {% endif %}
+      
+      {% comment %} All Posts breadcrumb {% endcomment %}
+      {% elsif page.url contains '/all-posts/' %}
+        <li class="breadcrumb__item">
+          <span class="breadcrumb__current">All Posts</span>
+        </li>
+      
+      {% comment %} Posts breadcrumb {% endcomment %}
+      {% elsif page.url contains '/posts/' %}
+        <li class="breadcrumb__item">
+          <a href="{{ '/all-posts/' | relative_url }}" class="breadcrumb__link">All Posts</a>
+        </li>
+        <li class="breadcrumb__item">
+          <span class="breadcrumb__current">{{ page.title }}</span>
+        </li>
+      
+      {% comment %} How to Contribute breadcrumb {% endcomment %}
+      {% elsif page.url contains '/how-to-contribute/' %}
+        <li class="breadcrumb__item">
+          <span class="breadcrumb__current">How to Contribute</span>
+        </li>
+      
+      {% comment %} About Us breadcrumb {% endcomment %}
+      {% elsif page.url contains '/about-us/' %}
+        <li class="breadcrumb__item">
+          <span class="breadcrumb__current">About Us</span>
+        </li>
+      
+      {% comment %} Default fallback {% endcomment %}
+      {% else %}
+        <li class="breadcrumb__item">
+          <span class="breadcrumb__current">{{ page.title }}</span>
+        </li>
+      {% endif %}
+    </ol>
+  </div>
+</nav>
+{% endif %}

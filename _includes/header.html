@@ -1,0 +1,104 @@
+<!-- Header Navigation Component -->
+<header class="nav" role="banner">
+  <div class="nav__container">
+    <a href="{{ '/' | relative_url }}" class="nav__brand">
+      {{ site.title }}
+    </a>
+    
+    <nav class="nav__menu" id="main-navigation" role="navigation" aria-label="Main navigation">
+      <ul class="nav__menu">
+        <li class="nav__item">
+          <a href="{{ '/' | relative_url }}" class="nav__link{% if page.url == '/' %} nav__link--active{% endif %}">
+            Home
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="{{ '/trail-map/' | relative_url }}" class="nav__link{% if page.url contains '/trail-map/' %} nav__link--active{% endif %}">
+            Trail Map
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="{{ '/sections/' | relative_url }}" class="nav__link{% if page.url contains '/sections/' %} nav__link--active{% endif %}">
+            Trail Sections
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="{{ '/all-posts/' | relative_url }}" class="nav__link{% if page.url contains '/all-posts/' %} nav__link--active{% endif %}">
+            All Posts
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="{{ '/how-to-contribute/' | relative_url }}" class="nav__link{% if page.url contains '/how-to-contribute/' %} nav__link--active{% endif %}">
+            How to Contribute
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="{{ '/about-us/' | relative_url }}" class="nav__link{% if page.url contains '/about-us/' %} nav__link--active{% endif %}">
+            About Us
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <div class="nav__actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+// Mobile navigation toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('main-navigation');
+  
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', function() {
+      const isOpen = navMenu.classList.contains('nav__menu--open');
+      
+      navMenu.classList.toggle('nav__menu--open');
+      navToggle.setAttribute('aria-expanded', !isOpen);
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+        navMenu.classList.remove('nav__menu--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        navMenu.classList.remove('nav__menu--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.focus();
+      }
+    });
+  }
+});
+</script>

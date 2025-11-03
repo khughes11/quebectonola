@@ -1,0 +1,52 @@
+title: Quebec to NOLA Trail
+description: Documentation of the ancient Quebec to NOLA trail, including historical research, modern exploration, and conservation efforts.
+url: https://khughes11.github.io
+baseurl: /quebectonola
+
+# Jekyll configuration
+markdown: kramdown
+highlighter: rouge
+
+# Build settings
+destination: _site
+source: .
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Collections
+collections:
+  historical:
+    output: true
+    permalink: /historical/:name/
+  modern:
+    output: true
+    permalink: /modern/:name/
+  photos:
+    output: true
+    permalink: /photos/:name/
+  references:
+    output: true
+    permalink: /references/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "historical"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "modern"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "photos"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "references"
+    values:
+      layout: "post"

@@ -1,0 +1,41 @@
+<!-- Section Card Component -->
+<div class="card{% if featured %} card--featured{% endif %}">
+  <div class="card__header">
+    <h3 class="card__title">
+      <a href="{{ url }}">{{ title }}</a>
+    </h3>
+    {% if subtitle %}
+      <p class="card__subtitle">{{ subtitle }}</p>
+    {% endif %}
+  </div>
+  
+  <div class="card__content">
+    {% if description %}
+      <p>{{ description }}</p>
+    {% endif %}
+    
+    {% if stats %}
+      <div class="section-stats">
+        {% for stat in stats %}
+          <span class="tag tag--primary">{{ stat }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+    
+    {% if tags %}
+      <div class="mt-4">
+        {% for tag in tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+  
+  {% if actions %}
+    <div class="card__footer">
+      {% for action in actions %}
+        <a href="{{ action.url | relative_url }}" class="btn btn--primary btn--sm">{{ action.text }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

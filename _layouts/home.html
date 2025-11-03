@@ -1,0 +1,224 @@
+---
+layout: default
+---
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero__container">
+    <h1 class="hero__title">{{ site.title }}</h1>
+    <p class="hero__subtitle">
+      Documenting the ancient Indigenous trail across Canada and the United States through historical research, modern exploration, and conservation efforts.
+    </p>
+    <div class="hero__actions">
+      <a href="{{ '/trail-map/' | relative_url }}" class="btn btn--primary btn--lg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        Explore the Trail Map
+      </a>
+      <a href="{{ '/how-to-contribute/' | relative_url }}" class="btn btn--secondary btn--lg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="8.5" cy="7" r="4"></circle>
+          <line x1="20" y1="8" x2="20" y2="14"></line>
+          <line x1="23" y1="11" x2="17" y2="11"></line>
+        </svg>
+        How to Contribute
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Land Acknowledgement -->
+<div class="container mb-12">
+  <div class="land-acknowledgement">
+    <h3 class="land-acknowledgement__title">Land Acknowledgement</h3>
+    <p>This site documents trails that traverse traditional territories of Indigenous peoples. We acknowledge the ongoing relationship between Indigenous communities and these lands, and encourage visitors to learn about the specific territories they are exploring.</p>
+  </div>
+</div>
+
+<!-- Main Navigation Cards -->
+<section class="container">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    <div class="card card--featured">
+      <div class="card__header">
+        <h3 class="card__title">
+          <a href="{{ '/trail-map/' | relative_url }}">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Trail Map
+          </a>
+        </h3>
+        <p class="card__subtitle">Interactive map showing the complete trail route</p>
+      </div>
+      <div class="card__content">
+        <p>Explore the ancient Quebec to NOLA trail through an interactive map featuring key points of interest, historical sites, and modern exploration routes.</p>
+      </div>
+      <div class="card__footer">
+        <a href="{{ '/trail-map/' | relative_url }}" class="btn btn--primary">View Map</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__header">
+        <h3 class="card__title">
+          <a href="{{ '/sections/' | relative_url }}">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3h18v18H3zM9 9h6v6H9z"></path>
+            </svg>
+            Trail Sections
+          </a>
+        </h3>
+        <p class="card__subtitle">Explore the trail section by section</p>
+      </div>
+      <div class="card__content">
+        <p>Detailed documentation for each section of the trail, including historical context, modern exploration notes, and conservation efforts.</p>
+      </div>
+      <div class="card__footer">
+        <a href="{{ '/sections/' | relative_url }}" class="btn btn--secondary">Browse Sections</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__header">
+        <h3 class="card__title">
+          <a href="{{ '/all-posts/' | relative_url }}">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14,2 14,8 20,8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10,9 9,9 8,9"></polyline>
+            </svg>
+            All Posts
+          </a>
+        </h3>
+        <p class="card__subtitle">Complete archive of research and updates</p>
+      </div>
+      <div class="card__content">
+        <p>Browse all posts, articles, and content from across the site, including modern exploration, historical discoveries, and conservation updates.</p>
+      </div>
+      <div class="card__footer">
+        <a href="{{ '/all-posts/' | relative_url }}" class="btn btn--secondary">View Archive</a>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card__header">
+        <h3 class="card__title">
+          <a href="{{ '/about-us/' | relative_url }}">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            About Us
+          </a>
+        </h3>
+        <p class="card__subtitle">Learn about our mission and team</p>
+      </div>
+      <div class="card__content">
+        <p>Discover the story behind this documentation project, our research methodology, and how you can get involved in preserving this important trail.</p>
+      </div>
+      <div class="card__footer">
+        <a href="{{ '/about-us/' | relative_url }}" class="btn btn--secondary">About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recent Activity Section -->
+<section class="container no-spacing">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+    <!-- Latest Modern Exploration Posts -->
+    {% include index-section.html 
+      collection_type="modern"
+      limit=3
+      title="Modern Exploration"
+      subtitle="Recent research and field work"
+      footer_url="/all-posts/"
+      footer_text="View All Posts"
+    %}
+
+    <!-- Recent Historical Discoveries -->
+    {% include index-section.html 
+      collection_type="historical"
+      limit=3
+      title="Historical Documentation"
+      subtitle="Recent historical research findings"
+      footer_url="/all-posts/"
+      footer_text="View All Posts"
+    %}
+  </div>
+</section>
+
+<!-- Photos Section -->
+<section class="container">
+  {% include index-section.html 
+    collection_type="photos"
+    limit=3
+    title="Photo Gallery"
+    subtitle="Visual documentation of the trail"
+    footer_url="/photos/"
+    footer_text="View All Photos"
+  %}
+</section>
+
+<!-- References Section -->
+<section class="container mb-12">
+  {% include index-section.html 
+    collection_type="references"
+    limit=3
+    title="References"
+    subtitle="Research sources and documentation"
+    footer_url="/references/"
+    footer_text="View All References"
+  %}
+</section>
+
+<!-- Quick Stats Section -->
+<section class="container mb-12">
+  <div class="card">
+    <div class="card__header">
+      <h3 class="card__title">Trail Documentation Stats</h3>
+      <p class="card__subtitle">Current progress and coverage</p>
+    </div>
+    <div class="card__content">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="stat-item">
+          <span class="stat-number">{{ site.historical.size | plus: site.modern.size | plus: site.photos.size | plus: site.references.size }}</span>
+          <span class="stat-label">Total Posts</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">{{ site.modern.size }}</span>
+          <span class="stat-label">Modern Posts</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">{{ site.historical.size }}</span>
+          <span class="stat-label">Historical Events</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">{{ site.photos.size }}</span>
+          <span class="stat-label">Photo Galleries</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="container">
+  <div class="card card--highlight">
+    <div class="card__content">
+      <h3 class="text-left">Help Preserve This Important Trail</h3>
+      <p class="text-left">This site is a work in progress as we continue to explore and document the Quebec to NOLA trail. Your contributions help preserve this important piece of history for future generations.</p>
+      <div class="hero__actions">
+        <a href="{{ '/how-to-contribute/' | relative_url }}" class="btn btn--primary">Get Involved</a>
+        <a href="{{ '/about-us/' | relative_url }}" class="btn btn--secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>

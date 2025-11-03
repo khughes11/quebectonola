@@ -1,0 +1,108 @@
+<!-- Index Section Component
+  
+  Parameters:
+  - collection_type: "all", "modern", "historical", "photos", or "references" (required)
+  - limit: number of posts to show (optional, empty = unlimited)
+  - section_filter: page slug to filter posts by sections parameter (optional)
+  - title: card title (required)
+  - subtitle: card subtitle (optional)
+  - show_date: toggle date display (default: true)
+  - show_tags: toggle tags display (default: true)
+  - show_sections: toggle sections display (default: true)
+  - show_description: toggle description display (default: true)
+  - show_footer: toggle footer display (default: true)
+  - footer_text: footer link text (optional)
+  - footer_url: footer link URL (optional)
+  - sort_by: "date" (default)
+  - sort_order: "desc" (default) or "asc"
+-->
+
+{% assign show_date = include.show_date | default: true %}
+{% assign show_tags = include.show_tags | default: true %}
+{% assign show_sections = include.show_sections | default: true %}
+{% assign show_description = include.show_description | default: true %}
+{% assign show_footer = include.show_footer | default: true %}
+{% assign sort_by = include.sort_by | default: "date" %}
+{% assign sort_order = include.sort_order | default: "desc" %}
+
+<!-- Aggregate posts based on collection_type -->
+{% assign posts = "" | split: "" %}
+
+{% if include.collection_type == "all" %}
+  {% assign posts = posts | concat: site.historical | concat: site.modern | concat: site.photos | concat: site.references %}
+{% elsif include.collection_type == "modern" %}
+  {% assign posts = site.modern %}
+{% elsif include.collection_type == "historical" %}
+  {% assign posts = site.historical %}
+{% elsif include.collection_type == "photos" %}
+  {% assign posts = site.photos %}
+{% elsif include.collection_type == "references" %}
+  {% assign posts = site.references %}
+{% endif %}
+
+<!-- Apply section filter if provided -->
+{% if include.section_filter %}
+  {% assign posts = posts | where_exp: "item", "item.sections contains include.section_filter" %}
+{% endif %}
+
+<!-- Sort posts -->
+{% if sort_by == "date" %}
+  {% assign posts = posts | sort: "date" %}
+  {% if sort_order == "desc" %}
+    {% assign posts = posts | reverse %}
+  {% endif %}
+{% endif %}
+
+<!-- Apply limit if provided -->
+{% if include.limit %}
+  {% assign posts = posts | limit: include.limit %}
+{% endif %}
+
+<div class="card">
+  <div class="card__header">
+    <h3 class="card__title">{{ include.title }}</h3>
+    {% if include.subtitle %}
+      <p class="card__subtitle">{{ include.subtitle }}</p>
+    {% endif %}
+  </div>
+  <div class="card__content">
+    {% if posts.size > 0 %}
+      {% for post in posts %}
+        <div class="activity-item">
+          <h4><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
+          <div class="activity-meta">
+            {% if show_date and post.date %}
+              <span class="tag">{{ post.date | date: "%B %d, %Y" }}</span>
+            {% endif %}
+            <span class="tag tag--tertiary">{{ post.collection | capitalize }}</span>
+            {% if show_sections and post.sections %}
+              {% for section in post.sections %}
+                <span class="tag tag--primary">{{ section | capitalize }}</span>
+              {% endfor %}
+            {% endif %}
+            {% if show_tags and post.tags %}
+              {% for tag in post.tags %}
+                <span class="tag tag--secondary">{{ tag | capitalize }}</span>
+              {% endfor %}
+            {% endif %}
+          </div>
+          {% if show_description %}
+            {% if post.description %}
+              <p class="text-tertiary">{{ post.description }}</p>
+            {% elsif post.excerpt %}
+              <p class="text-tertiary">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+            {% endif %}
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="text-tertiary">No content has been documented yet. Check back soon for updates!</p>
+    {% endif %}
+  </div>
+  {% if show_footer and include.footer_url %}
+    <div class="card__footer">
+      <a href="{{ include.footer_url | relative_url }}" class="btn btn--link">{{ include.footer_text | default: "View More" }}</a>
+    </div>
+  {% endif %}
+</div>
+

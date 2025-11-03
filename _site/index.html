@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quebec to NOLA Trail Documentation | Quebec to NOLA Trail</title>
+  <meta name="description" content="Documentation of the ancient Quebec to NOLA trail, including historical research, modern exploration, and conservation efforts.">
+  
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="/quebectonola/assets/css/design-system.css">
+  <link rel="stylesheet" href="/quebectonola/assets/css/components.css">
+  <link rel="stylesheet" href="/quebectonola/assets/css/pages.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/quebectonola/assets/images/favicon.svg">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Quebec to NOLA Trail Documentation | Quebec to NOLA Trail">
+  <meta property="og:description" content="Documentation of the ancient Quebec to NOLA trail, including historical research, modern exploration, and conservation efforts.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:4000/quebectonola/">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Quebec to NOLA Trail Documentation | Quebec to NOLA Trail">
+  <meta name="twitter:description" content="Documentation of the ancient Quebec to NOLA trail, including historical research, modern exploration, and conservation efforts.">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Quebec to NOLA Trail",
+    "description": "Documentation of the ancient Quebec to NOLA trail, including historical research, modern exploration, and conservation efforts.",
+    "url": "http://localhost:4000/quebectonola/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "http://localhost:4000/quebectonola/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip to main content link for screen readers -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Header Navigation -->
+  <!-- Header Navigation Component -->
+<header class="nav" role="banner">
+  <div class="nav__container">
+    <a href="/quebectonola/" class="nav__brand">
+      Quebec to NOLA Trail
+    </a>
+    
+    <nav class="nav__menu" id="main-navigation" role="navigation" aria-label="Main navigation">
+      <ul class="nav__menu">
+        <li class="nav__item">
+          <a href="/quebectonola/" class="nav__link nav__link--active">
+            Home
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="/quebectonola/trail-map/" class="nav__link">
+            Trail Map
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="/quebectonola/sections/" class="nav__link">
+            Trail Sections
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="/quebectonola/all-posts/" class="nav__link">
+            All Posts
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="/quebectonola/how-to-contribute/" class="nav__link">
+            How to Contribute
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="/quebectonola/about-us/" class="nav__link">
+            About Us
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <div class="nav__actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+// Mobile navigation toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('main-navigation');
+  
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', function() {
+      const isOpen = navMenu.classList.contains('nav__menu--open');
+      
+      navMenu.classList.toggle('nav__menu--open');
+      navToggle.setAttribute('aria-expanded', !isOpen);
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+        navMenu.classList.remove('nav__menu--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        navMenu.classList.remove('nav__menu--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.focus();
+      }
+    });
+  }
+});
+</script>
+
+  
+  <!-- Breadcrumb Navigation -->
+  <!-- Breadcrumb Navigation Component -->
+
+
+  
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    <!-- Hero Section -->
+<section class="hero">
+  <div class="hero__container">
+    <h1 class="hero__title">Quebec to NOLA Trail</h1>
+    <p class="hero__subtitle">
+      Documenting the ancient Indigenous trail across Canada and the United States through historical research, modern exploration, and conservation efforts.
+    </p>
+    <div class="hero__actions">
+      <a href="/quebectonola/trail-map/" class="btn btn--primary btn--lg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        Explore the Trail Map
+      </a>
+      <a href="/quebectonola/how-to-contribute/" class="btn btn--secondary btn--lg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="8.5" cy="7" r="4"></circle>
+          <line x1="20" y1="8" x2="20" y2="14"></line>
+          <line x1="23" y1="11" x2="17" y2="11"></line>
+        </svg>
+        How to Contribute
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Land Acknowledgement -->
+<div class="container mb-12">
+  <div class="land-acknowledgement">
+    <h3 class="land-acknowledgement__title">Land Acknowledgement</h3>
+    <p>This site documents trails that traverse traditional territories of Indigenous peoples. We acknowledge the ongoing relationship between Indigenous communities and these lands, and encourage visitors to learn about the specific territories they are exploring.</p>
+  </div>
+</div>
+
+<!-- Main Navigation Cards -->
+<section class="container">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    <div class="card card--featured">
+      <div class="card__header">
+        <h3 class="card__title">
+          <a href="/quebectonola/trail-map/">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Trail Map
+          </a>
+        </h3>
+        <p class="card__subtitle">Interactive map showing the complete trail route</p>
+      </div>
+      <div class="card__content">
+        <p>Explore the ancient Quebec to NOLA trail through an interactive map featuring key points of interest, historical sites, and modern exploration routes.</p>
+      </div>
+      <div class="card__footer">
+        <a href="/quebectonola/trail-map/" class="btn btn--primary">View Map</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__header">
+        <h3 class="card__title">
+          <a href="/quebectonola/sections/">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3h18v18H3zM9 9h6v6H9z"></path>
+            </svg>
+            Trail Sections
+          </a>
+        </h3>
+        <p class="card__subtitle">Explore the trail section by section</p>
+      </div>
+      <div class="card__content">
+        <p>Detailed documentation for each section of the trail, including historical context, modern exploration notes, and conservation efforts.</p>
+      </div>
+      <div class="card__footer">
+        <a href="/quebectonola/sections/" class="btn btn--secondary">Browse Sections</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__header">
+        <h3 class="card__title">
+          <a href="/quebectonola/all-posts/">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14,2 14,8 20,8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10,9 9,9 8,9"></polyline>
+            </svg>
+            All Posts
+          </a>
+        </h3>
+        <p class="card__subtitle">Complete archive of research and updates</p>
+      </div>
+      <div class="card__content">
+        <p>Browse all posts, articles, and content from across the site, including modern exploration, historical discoveries, and conservation updates.</p>
+      </div>
+      <div class="card__footer">
+        <a href="/quebectonola/all-posts/" class="btn btn--secondary">View Archive</a>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card__header">
+        <h3 class="card__title">
+          <a href="/quebectonola/about-us/">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            About Us
+          </a>
+        </h3>
+        <p class="card__subtitle">Learn about our mission and team</p>
+      </div>
+      <div class="card__content">
+        <p>Discover the story behind this documentation project, our research methodology, and how you can get involved in preserving this important trail.</p>
+      </div>
+      <div class="card__footer">
+        <a href="/quebectonola/about-us/" class="btn btn--secondary">About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recent Activity Section -->
+<section class="container no-spacing">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+    <!-- Latest Modern Exploration Posts -->
+    <!-- Index Section Component
+  
+  Parameters:
+  - collection_type: "all", "modern", "historical", "photos", or "references" (required)
+  - limit: number of posts to show (optional, empty = unlimited)
+  - section_filter: page slug to filter posts by sections parameter (optional)
+  - title: card title (required)
+  - subtitle: card subtitle (optional)
+  - show_date: toggle date display (default: true)
+  - show_tags: toggle tags display (default: true)
+  - show_sections: toggle sections display (default: true)
+  - show_description: toggle description display (default: true)
+  - show_footer: toggle footer display (default: true)
+  - footer_text: footer link text (optional)
+  - footer_url: footer link URL (optional)
+  - sort_by: "date" (default)
+  - sort_order: "desc" (default) or "asc"
+-->
+
+
+
+
+
+
+
+
+
+<!-- Aggregate posts based on collection_type -->
+
+
+
+
+<!-- Apply section filter if provided -->
+
+
+<!-- Sort posts -->
+
+
+<!-- Apply limit if provided -->
+
+
+<div class="card">
+  <div class="card__header">
+    <h3 class="card__title">Modern Exploration</h3>
+    
+      <p class="card__subtitle">Recent research and field work</p>
+    
+  </div>
+  <div class="card__content">
+    
+      
+        <div class="activity-item">
+          <h4><a href="/quebectonola/modern/protection-efforts/">Section A Protection Efforts</a></h4>
+          <div class="activity-meta">
+            
+              <span class="tag">November 02, 2025</span>
+            
+            <span class="tag tag--tertiary">Modern</span>
+            
+              
+                <span class="tag tag--primary">Section-a</span>
+              
+            
+            
+              
+            
+          </div>
+          
+            
+              <p class="text-tertiary">Conservation Efforts in Section A
+</p>
+            
+          
+        </div>
+      
+        <div class="activity-item">
+          <h4><a href="/quebectonola/modern/2024-06-follow-up/">Follow-up Survey of Marker Site</a></h4>
+          <div class="activity-meta">
+            
+              <span class="tag">June 20, 2024</span>
+            
+            <span class="tag tag--tertiary">Modern</span>
+            
+              
+                <span class="tag tag--primary">Section-a</span>
+              
+            
+            
+              
+                <span class="tag tag--secondary">Survey</span>
+              
+                <span class="tag tag--secondary">Follow-up</span>
+              
+                <span class="tag tag--secondary">Documentation</span>
+              
+            
+          </div>
+          
+            
+              <p class="text-tertiary">Follow-up Survey
+</p>
+            
+          
+        </div>
+      
+        <div class="activity-item">
+          <h4><a href="/quebectonola/modern/2024-03-discovery/">Discovery of Ancient Marker</a></h4>
+          <div class="activity-meta">
+            
+              <span class="tag">March 15, 2024</span>
+            
+            <span class="tag tag--tertiary">Modern</span>
+            
+              
+                <span class="tag tag--primary">Section-a</span>
+              
+            
+            
+              
+                <span class="tag tag--secondary">Discovery</span>
+              
+                <span class="tag tag--secondary">Marker</span>
+              
+                <span class="tag tag--secondary">Archaeology</span>
+              
+            
+          </div>
+          
+            
+              <p class="text-tertiary">Discovery of Ancient Marker
+</p>
+            
+          
+        </div>
+      
+    
+  </div>
+  
+    <div class="card__footer">
+      <a href="/quebectonola/all-posts/" class="btn btn--link">View All Posts</a>
+    </div>
+  
+</div>
+
+
+
+    <!-- Recent Historical Discoveries -->
+    <!-- Index Section Component
+  
+  Parameters:
+  - collection_type: "all", "modern", "historical", "photos", or "references" (required)
+  - limit: number of posts to show (optional, empty = unlimited)
+  - section_filter: page slug to filter posts by sections parameter (optional)
+  - title: card title (required)
+  - subtitle: card subtitle (optional)
+  - show_date: toggle date display (default: true)
+  - show_tags: toggle tags display (default: true)
+  - show_sections: toggle sections display (default: true)
+  - show_description: toggle description display (default: true)
+  - show_footer: toggle footer display (default: true)
+  - footer_text: footer link text (optional)
+  - footer_url: footer link URL (optional)
+  - sort_by: "date" (default)
+  - sort_order: "desc" (default) or "asc"
+-->
+
+
+
+
+
+
+
+
+
+<!-- Aggregate posts based on collection_type -->
+
+
+
+
+<!-- Apply section filter if provided -->
+
+
+<!-- Sort posts -->
+
+
+<!-- Apply limit if provided -->
+
+
+<div class="card">
+  <div class="card__header">
+    <h3 class="card__title">Historical Documentation</h3>
+    
+      <p class="card__subtitle">Recent historical research findings</p>
+    
+  </div>
+  <div class="card__content">
+    
+      
+        <div class="activity-item">
+          <h4><a href="/quebectonola/historical/battle-of-ridge/">Battle of Ridge</a></h4>
+          <div class="activity-meta">
+            
+              <span class="tag">November 02, 2025</span>
+            
+            <span class="tag tag--tertiary">Historical</span>
+            
+              
+                <span class="tag tag--primary">Section-a</span>
+              
+                <span class="tag tag--primary">Section-b</span>
+              
+            
+            
+              
+            
+          </div>
+          
+            
+              <p class="text-tertiary">A significant conflict that shaped the development of the trail</p>
+            
+          
+        </div>
+      
+        <div class="activity-item">
+          <h4><a href="/quebectonola/historical/battle-reference/">Battle of Ridge - Section A Perspective</a></h4>
+          <div class="activity-meta">
+            
+              <span class="tag">November 02, 2025</span>
+            
+            <span class="tag tag--tertiary">Historical</span>
+            
+              
+                <span class="tag tag--primary">Section-a</span>
+              
+            
+            
+              
+            
+          </div>
+          
+            
+              <p class="text-tertiary">Battle of Ridge: Section A Impact
+</p>
+            
+          
+        </div>
+      
+    
+  </div>
+  
+    <div class="card__footer">
+      <a href="/quebectonola/all-posts/" class="btn btn--link">View All Posts</a>
+    </div>
+  
+</div>
+
+
+  </div>
+</section>
+
+<!-- Photos Section -->
+<section class="container">
+  <!-- Index Section Component
+  
+  Parameters:
+  - collection_type: "all", "modern", "historical", "photos", or "references" (required)
+  - limit: number of posts to show (optional, empty = unlimited)
+  - section_filter: page slug to filter posts by sections parameter (optional)
+  - title: card title (required)
+  - subtitle: card subtitle (optional)
+  - show_date: toggle date display (default: true)
+  - show_tags: toggle tags display (default: true)
+  - show_sections: toggle sections display (default: true)
+  - show_description: toggle description display (default: true)
+  - show_footer: toggle footer display (default: true)
+  - footer_text: footer link text (optional)
+  - footer_url: footer link URL (optional)
+  - sort_by: "date" (default)
+  - sort_order: "desc" (default) or "asc"
+-->
+
+
+
+
+
+
+
+
+
+<!-- Aggregate posts based on collection_type -->
+
+
+
+
+<!-- Apply section filter if provided -->
+
+
+<!-- Sort posts -->
+
+
+<!-- Apply limit if provided -->
+
+
+<div class="card">
+  <div class="card__header">
+    <h3 class="card__title">Photo Gallery</h3>
+    
+      <p class="card__subtitle">Visual documentation of the trail</p>
+    
+  </div>
+  <div class="card__content">
+    
+      <p class="text-tertiary">No content has been documented yet. Check back soon for updates!</p>
+    
+  </div>
+  
+    <div class="card__footer">
+      <a href="/quebectonola/photos/" class="btn btn--link">View All Photos</a>
+    </div>
+  
+</div>
+
+
+</section>
+
+<!-- References Section -->
+<section class="container mb-12">
+  <!-- Index Section Component
+  
+  Parameters:
+  - collection_type: "all", "modern", "historical", "photos", or "references" (required)
+  - limit: number of posts to show (optional, empty = unlimited)
+  - section_filter: page slug to filter posts by sections parameter (optional)
+  - title: card title (required)
+  - subtitle: card subtitle (optional)
+  - show_date: toggle date display (default: true)
+  - show_tags: toggle tags display (default: true)
+  - show_sections: toggle sections display (default: true)
+  - show_description: toggle description display (default: true)
+  - show_footer: toggle footer display (default: true)
+  - footer_text: footer link text (optional)
+  - footer_url: footer link URL (optional)
+  - sort_by: "date" (default)
+  - sort_order: "desc" (default) or "asc"
+-->
+
+
+
+
+
+
+
+
+
+<!-- Aggregate posts based on collection_type -->
+
+
+
+
+<!-- Apply section filter if provided -->
+
+
+<!-- Sort posts -->
+
+
+<!-- Apply limit if provided -->
+
+
+<div class="card">
+  <div class="card__header">
+    <h3 class="card__title">References</h3>
+    
+      <p class="card__subtitle">Research sources and documentation</p>
+    
+  </div>
+  <div class="card__content">
+    
+      <p class="text-tertiary">No content has been documented yet. Check back soon for updates!</p>
+    
+  </div>
+  
+    <div class="card__footer">
+      <a href="/quebectonola/references/" class="btn btn--link">View All References</a>
+    </div>
+  
+</div>
+
+
+</section>
+
+<!-- Quick Stats Section -->
+<section class="container mb-12">
+  <div class="card">
+    <div class="card__header">
+      <h3 class="card__title">Trail Documentation Stats</h3>
+      <p class="card__subtitle">Current progress and coverage</p>
+    </div>
+    <div class="card__content">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="stat-item">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Total Posts</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Modern Posts</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Historical Events</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Photo Galleries</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="container">
+  <div class="card card--highlight">
+    <div class="card__content">
+      <h3 class="text-left">Help Preserve This Important Trail</h3>
+      <p class="text-left">This site is a work in progress as we continue to explore and document the Quebec to NOLA trail. Your contributions help preserve this important piece of history for future generations.</p>
+      <div class="hero__actions">
+        <a href="/quebectonola/how-to-contribute/" class="btn btn--primary">Get Involved</a>
+        <a href="/quebectonola/about-us/" class="btn btn--secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3 class="footer__section-title">Explore</h3>
+          <ul class="footer__links">
+            <li><a href="/quebectonola/trail-map/" class="footer__link">Trail Map</a></li>
+            <li><a href="/quebectonola/sections/" class="footer__link">Trail Sections</a></li>
+            <li><a href="/quebectonola/all-posts/" class="footer__link">All Posts</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__section">
+          <h3 class="footer__section-title">Contribute</h3>
+          <ul class="footer__links">
+            <li><a href="/quebectonola/how-to-contribute/" class="footer__link">How to Contribute</a></li>
+            <li><a href="/quebectonola/about-us/" class="footer__link">About Us</a></li>
+            <li><a href="mailto:contact@quebectonola.com" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p>&copy; 2025 Quebec to NOLA Trail. All rights reserved.</p>
+        <p class="text-sm text-tertiary mt-2">
+          This site documents the ancient Quebec to NOLA trail with respect for Indigenous histories and ongoing research.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Theme Toggle Script -->
+  <script src="/quebectonola/assets/js/theme-toggle.js"></script>
+</body>
+</html>
